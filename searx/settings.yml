@@ -1801,11 +1801,11 @@ engines:
   - name: openairedatasets
     engine: json_engine
     paging: true
-    search_url: https://api.openaire.eu/search/datasets?format=json&page={pageno}&size=10&title={query}
-    results_query: response/results/result
-    url_query: metadata/oaf:entity/oaf:result/children/instance/webresource/url/$
-    title_query: metadata/oaf:entity/oaf:result/title/$
-    content_query: metadata/oaf:entity/oaf:result/description/$
+    search_url: https://api.openaire.eu/graph/v3/research-products?type=dataset&page={pageno}&search={query}
+    results_query: results
+    url_query: instances/0/urls/0
+    title_query: mainTitle
+    content_query: descriptions/0
     content_html_to_text: true
     categories: "science"
     shortcut: oad
@@ -1821,11 +1821,11 @@ engines:
   - name: openairepublications
     engine: json_engine
     paging: true
-    search_url: https://api.openaire.eu/search/publications?format=json&page={pageno}&size=10&title={query}
-    results_query: response/results/result
-    url_query: metadata/oaf:entity/oaf:result/children/instance/webresource/url/$
-    title_query: metadata/oaf:entity/oaf:result/title/$
-    content_query: metadata/oaf:entity/oaf:result/description/$
+    search_url: https://api.openaire.eu/graph/v3/research-products?type=publication&page={pageno}&search={query}
+    results_query: results
+    url_query: instances/0/urls/0
+    title_query: mainTitle
+    content_query: descriptions/0
     content_html_to_text: true
     categories: science
     shortcut: oap
